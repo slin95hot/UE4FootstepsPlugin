@@ -59,3 +59,4 @@ specified in the animation using a custom animnotify that's control the size of 
 <h3> -if no manager class has been selected the "FootStepsComponent" well spawn a base class manager if none are present in the level.</h3>
 <h3>-Do Not Change Variables Value Directly, use the functions in the "Footsteps Manager" Category.</h3>
 |changing variables value directly will not update the actors using it.
+
