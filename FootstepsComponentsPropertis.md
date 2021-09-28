@@ -1,0 +1,1 @@
+# Footsteps Components Propertis:
