@@ -28,6 +28,7 @@ specified in the animation using a custom animnotify that's control the size of 
  ![alt text](/img/06.png)
 #### 9.add the new FootStepsComponent you created to the actor you want. 
 >.must have a Skeletal Mesh.
+>
 ![alt text](/img/07.png)  
 #### 10.in the class setting of the actor you added the FootStepsComponent to, add Footsteps Interface to the Interfaces section.
   ![alt text](/img/08.png)  
