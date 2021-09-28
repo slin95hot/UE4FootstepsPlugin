@@ -30,3 +30,11 @@ How To Setup:
 
 8.Set the Data Table to the Data Table you created.
 
+ ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/06.png)
+ 
+ 9.add the new FootStepsComponent you created to an the actor you want. (must have a Skeletal Mesh)
+ 
+  ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/07.png)
+  
+  10.
+ 
