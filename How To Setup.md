@@ -20,7 +20,7 @@ specified in the animation using a custom animnotify that's control the size of 
   ![](/img/04.png) 
 ##### 6.fill the Data Table with the Data you have. 
 >. you could leave some effect empty.
->>.Only Dirty Surfaces uses the faded footprint coulmn.
+>>.Only Dirty Surfaces uses the [faded dirty footprint](#dirty-footprints) coulmn.
 ##### 7.add a new Blueprint of type "FootStepsComponent".
  ![](/img/05.png)
 ##### 8.Set the Data Table to the Data Table you created.
@@ -73,10 +73,10 @@ specified in the animation using a custom animnotify that's control the size of 
 ##### Dirty Rows Names: enter the names of the surfaces you want to mark as dirty here.
 
 #### Others:
-##### Spawn Particle at Bone Location: cheking this option will cuase the particles to spawn at bone or socket location instead of the floor underneath.
+##### Spawn Particle at Bone Location: checking this option will cause the particles to spawn at bone or socket location instead of the floor underneath.
 >. useful for swimming for example.
 ##### Override Row & Override With: When Override Row is checked you can enter a surface name in Override With to override whatever effect is playing with the effect of said surface no matter the surface underneath.
 >. you could override with water while swimming for example, or with blood if actor is injured while setting the Footprint Lifetime to a larger value if you want the player to track it.
-##### Ignore Missing Effect:
+##### Ignore Missing Effect: if there a missing effects from current data table row checking this option will play effects from the first row of the data table instead.
 
 ## [Back](/README.md)
