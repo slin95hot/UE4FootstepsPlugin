@@ -1,7 +1,7 @@
 # What does it do?
 it's Play a sound and Spawn a Particle and footprint under the associated bone or socket
 specified in the animation using a custom animnotify that's control the size of the footprint and the partical.
-# [Propertis](#footsteps-component-propertis)
+# [* Footsteps Component Propertis](#footsteps-component-propertis)
 # How To Setup:
 
 #### 1.install and activate the plugin.
