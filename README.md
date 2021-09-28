@@ -69,6 +69,7 @@
 
 #### Dirty Footprints:
 >. Dirty Footprints are the trail of footprints thats actors leave after steping on a dirty surface (blood,mud..etc).
+>> Faded Dirty Footprints will spawn -if found- after "Dirty Steps Count" is less then half (if Dirty Steps Count set to 8 it will spawn 4 normal and 4 faded).
 
 ![](img/13.png)
 ##### Overlay Dirty Footprints Over Normal Ones: whether to prints dirty footprints over normal one or switch to dirty footprints only.
