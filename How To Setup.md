@@ -1,7 +1,7 @@
 # What does it do?
 it's Play a sound and Spawn a Particle and footprint under the associated bone or socket
 specified in the animation using a custom animnotify that's control the size of the footprint and the partical.
-# [* Footsteps Component Propertis](#footsteps-component-propertis)
+# [See Footsteps Component Propertis](#footsteps-component-propertis)
 # How To Setup:
 
 #### 1.install and activate the plugin.
@@ -44,14 +44,18 @@ specified in the animation using a custom animnotify that's control the size of 
 # Footsteps Component Propertis:
 ![](/img/12.png)
 
-### Data Table: its where the effects categorized, it need to be of the "Footsteps Data" Row Struct.
-### Manager:
+#### Data Table: its where the effects categorized, it need to be of the "Footsteps Data" Row Struct.
+#### Manager Class: select a Manager, to create a manager class create a new blueprint of type "FootStepsManager".
+![](img/05.png)
+#### Manager: the Manager can be used to control all the "FootStepsComponent" associated with,you can use different managers for different groubs of actors.
+#### you can set the values you want in the manager and every "FootStepsComponent" associated with it in the level will take its values from it.
 >. manager is not necessary for the setup but its allow for more control.
 >
 >. the "FootStepsComponent" well spawn a manager of the specified class automatically if none are present in the level.
+>>. if no manager class has been selected the "FootStepsComponent" well spawn a base class manager if none are present in the level.
 >
->. if no manager class has been selected the "FootStepsComponent" well spawn a base class manager if none are present in the level.
-#### Do Not Change Variables Value Directly!, use the functions in the "Footsteps Manager" Category.
->. changing variables value directly will not update the actors using it.
+>. Do Not Change Variables Value Directly!, use the functions in the "Footsteps Manager" Category.
+>>. changing variables value directly will not update the actors using it.
+#### Ignore Manager:
 
 ## [Back](/README.md)
