@@ -20,7 +20,7 @@
  ![](/img/03.png)
  
 ##### 5.create a new row for each surface type and name it the same as the corresponding surface type. 
->. importnt and case sensitive.
+>. important and case sensitive.
 
   ![](/img/04.png) 
 ##### 6.fill the Data Table with the Data you have. 
