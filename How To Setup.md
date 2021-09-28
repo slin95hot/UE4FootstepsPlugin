@@ -48,6 +48,8 @@ How To Setup:
   
   ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/10.png)
   
-  13.open an animation sequence and add "Footstep_notify" at a frame you see the feet touch the ground.
+  13.open an animation sequence and add "Footstep_notify" at a frame you see the foot touch the ground.
   
-   ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/11.png)
+   ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/11.png
+   
+  14.set "Bone Name" to the name of the foot touching the ground;
