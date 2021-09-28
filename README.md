@@ -5,6 +5,8 @@
 
 ## [See Footsteps Component Propertis](#footsteps-component-propertis)
 
+## [FootstepNotify](#Footstep-Notify)
+
 ## How To Setup:
 
 ##### 1.install and activate the plugin.
@@ -40,8 +42,18 @@
   ![](/img/10.png)
 ##### 13.open an animation sequence and add "Footstep_notify" at a frame you see the foot touch the ground.
 ![](/img/11.png)
-##### 14.set "Bone Name" to the name of the foot touching the ground;
+##### 14.set "Bone Name" to the name of the foot touching the surface.
 
+## Footstep Notify:
+
+#### Footprint Size: set the footprint size.
+>. if you set a negative scale on one of the foots you could flip the footprint so it's appear normal on each foot while using one texture.
+#### Particle Size: set the Particle size.
+#### Bone Name: set the name of the bone you want to trace from to the surface underneath.
+>. the footprint will spawn on the trace hit location.
+#### Trace Lenght: how far down do you want to scan for surface.
+#### Volume Multiplier: set the volume multiplier of the sound effect.
+>. if crouching you may want to lower the sound effect volume.
 
 ## Footsteps Component Propertis:
 >. same as [Manager](#manager-the-manager-can-be-used-to-control-all-the-footstepscomponent-associated-withyou-can-use-different-managers-for-different-groubs-of-actors) Propertis.
@@ -82,3 +94,5 @@
 ##### Override Row & Override With: When Override Row is checked you can enter a surface name in Override With to override whatever effect is playing with the effect of said surface no matter the surface underneath.
 >. you could override with water while swimming for example, or with blood if actor is injured while setting the Footprint Lifetime to a larger value if you want the player to track it.
 ##### Ignore Missing Effect: if there a missing effects from current data table row checking this option will play effects from the first row of the data table instead.
+
+## [top](#Footsteps-Plugin-for-UE4)
