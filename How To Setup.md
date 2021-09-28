@@ -59,6 +59,13 @@ specified in the animation using a custom animnotify that's control the size of 
 >. Do Not Change Variables Value Directly!, use the functions in the "Footsteps Manager" Category.
 >>. changing variables value directly will not update the actors using it.
 ##### Ignore Manager: if ignore Manager is checked the Component wont Use a Manager and its values can be changed independently.
-#### Footsteps State:
+#### Footsteps State: its self explanatory.
+#### FadeOut:
+##### Footprint Lifetime: how long will footprint last (in sec).
+##### Footprint FadeOut Delay: how long will footprint take before starting to fadeout (in sec).
+##### Footprint FadeOut Duration: how long will footprint take to fadeout (in sec).
+
+#### Dirty Footprints:
+
 
 ## [Back](/README.md)
