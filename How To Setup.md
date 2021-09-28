@@ -32,9 +32,10 @@ How To Setup:
 
  ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/06.png)
  
- 9.add the new FootStepsComponent you created to an the actor you want. (must have a Skeletal Mesh)
+ 9.add the new FootStepsComponent you created to the actor you want. (must have a Skeletal Mesh)
  
   ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/07.png)
   
-  10.
- 
+ 10.in the class setting of the actor you added the FootStepsComponent to, add Footsteps Interface to the Interfaces section.
+
+  ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/08.png)
