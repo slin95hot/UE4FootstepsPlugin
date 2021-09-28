@@ -60,4 +60,4 @@ specified in the animation using a custom animnotify that's control the size of 
 ### Do Not Change Variables Value Directly!, use the functions in the "Footsteps Manager" Category.
 >. changing variables value directly will not update the actors using it.
 
-## [Back](main/README.md)
+## [Back](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/README.md)
