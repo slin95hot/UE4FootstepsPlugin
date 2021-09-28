@@ -25,9 +25,9 @@ struct FFootStepsData : public FTableRowBase
 	USoundBase* SoundEffect = nullptr;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UNiagaraSystem* ParticleSystem = nullptr;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (DisplayName = "Footprint"))
 	UMaterialInterface* FootPrint = nullptr;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (DisplayName = "Faded Dirty Footprint"))
 	UMaterialInterface* FadedDirtyFootPrint = nullptr;
 };
 /*
@@ -52,10 +52,16 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	void SetupManager();
+
 	const bool CheckDataTableValidity(UDataTable* DataTableToCheck);
+
 	const bool CheckDataTableRowValidity(FString RowName, UDataTable* InDataTable);
+
 	const void SpawnParticleAtLocation(UWorld* World, UNiagaraSystem* Particle, FVector Location, FRotator Rotation, FVector Size);
+
 	const void SpawnFootprintAtLocation(UWorld* World, UMaterialInterface* Footprint, FVector Location, FRotator Rotation, FVector Size, float LifeTime, float FadeOutDelay, float FadeOutDuration);
+
 	bool IsADirtyRow(FName RowName);
 
 	bool bDataTableIsValid;
@@ -65,7 +71,6 @@ protected:
 	FFootStepsData* DefaultRow;
 	FFootStepsData* CurrentRow;
 	FFootStepsData* CurrentDirtyRow;
-
 	int32 DirtyStepsCountInt;
 	UPROPERTY(BlueprintReadOnly)
 	TEnumAsByte<EPhysicalSurface> SurfaceType;
@@ -103,6 +108,8 @@ public:
 	void SetFootprintFadeOutDelay(float FadeOutDelay);
 	UFUNCTION()
 	void SetFootprintFadeOutDuration(float FadeOutDuration);
+	UFUNCTION(BlueprintCallable)
+	void ChangeIgnoreManagerState(bool State, TSubclassOf<AFootstepsManager> ManagerType);
 	/*
 	 *
 	 *
@@ -113,8 +120,10 @@ public:
 	UDataTable* DataTable;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component", meta = (DisplayPriority = 2, EditCondition = "!bIgnoreManager"))
+	TSubclassOf<AFootstepsManager> ManagerClass;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component", meta = (DisplayPriority = 3, EditCondition = "!bIgnoreManager"))
 	AFootstepsManager* Manager;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component", meta = (DisplayPriority = 3))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component", meta = (DisplayPriority = 4))
 	bool bIgnoreManager;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Footsteps State", meta = (DisplayPriority = 1))
@@ -135,7 +144,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Fade Out", meta = (DisplayPriority = 3, EditCondition = "!bDisableEverything"))
 	float FootprintFadeOutDuration=5.f;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Dirty Footprints", meta = (DisplayPriority = 1, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Dirty Footprints", meta = (DisplayName = "Overlay Dirty Footprints Over Normal Ones", DisplayPriority = 1, EditCondition = "!bDisableEverything"))
 	bool bOverlayDirtyFootprintsOverNormalOne=true;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Dirty Footprints", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
 	int32 DirtyStepsCount = 8;

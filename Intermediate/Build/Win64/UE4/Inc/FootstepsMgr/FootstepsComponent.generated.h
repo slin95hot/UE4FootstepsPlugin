@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AFootstepsManager;
 struct FVector;
 class USceneComponent;
 #ifdef FOOTSTEPSMGR_FootstepsComponent_generated_h
@@ -26,6 +27,7 @@ template<> FOOTSTEPSMGR_API UScriptStruct* StaticStruct<struct FFootStepsData>()
 #define HostProject_Plugins_FootstepsMgr_Source_FootstepsMgr_Public_FootstepsComponent_h_40_SPARSE_DATA
 #define HostProject_Plugins_FootstepsMgr_Source_FootstepsMgr_Public_FootstepsComponent_h_40_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execChangeIgnoreManagerState); \
 	DECLARE_FUNCTION(execSetFootprintFadeOutDuration); \
 	DECLARE_FUNCTION(execSetFootprintFadeOutDelay); \
 	DECLARE_FUNCTION(execSetFootprintLifeTime); \
@@ -46,6 +48,7 @@ template<> FOOTSTEPSMGR_API UScriptStruct* StaticStruct<struct FFootStepsData>()
 
 #define HostProject_Plugins_FootstepsMgr_Source_FootstepsMgr_Public_FootstepsComponent_h_40_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execChangeIgnoreManagerState); \
 	DECLARE_FUNCTION(execSetFootprintFadeOutDuration); \
 	DECLARE_FUNCTION(execSetFootprintFadeOutDelay); \
 	DECLARE_FUNCTION(execSetFootprintLifeTime); \

@@ -24,26 +24,55 @@ void UFootstepsComponent::BeginPlay()
 	Super::BeginPlay();
 	//Manager.EX.BindUFunction(this, TEXT("SetDisableSoundEffects"));
 	CheckDataTableValidity(DataTable);
+	SetupManager();
+	// ...
+	
+}
 
-	if (Manager==NULL)
+void UFootstepsComponent::SetupManager()
+{
+	if (ManagerClass != NULL)
 	{
-		TArray<AActor*> FoundActors;
-		UGameplayStatics::GetAllActorsOfClass(GetOwner()->GetWorld(),AFootstepsManager::StaticClass(), FoundActors);
-		if (FoundActors.Num() != 0)
+
+		if (Manager == NULL)
 		{
-			Manager = Cast<AFootstepsManager>(FoundActors.Last());
-			if (Manager == NULL)
+			TArray<AActor*> FoundActors;
+			UGameplayStatics::GetAllActorsOfClass(GetOwner()->GetWorld(), ManagerClass, FoundActors);
+			if (FoundActors.Num() != 0)
+			{
+				Manager = Cast<AFootstepsManager>(FoundActors.Last());
+				if (Manager == NULL)
+				{
+					Manager = GetOwner()->GetWorld()->SpawnActor<AFootstepsManager>(ManagerClass, FVector(0.f, 0.f, 0.f), FRotator(0.f, 0.f, 0.f));
+				}
+			}
+			else
+			{
+				Manager = GetOwner()->GetWorld()->SpawnActor<AFootstepsManager>(ManagerClass, FVector(0.f, 0.f, 0.f), FRotator(0.f, 0.f, 0.f));
+			}
+		}
+	}
+	else
+	{
+		if (Manager == NULL)
+		{
+			TArray<AActor*> FoundActors;
+			UGameplayStatics::GetAllActorsOfClass(GetOwner()->GetWorld(), AFootstepsManager::StaticClass(), FoundActors);
+			if (FoundActors.Num() != 0)
+			{
+				Manager = Cast<AFootstepsManager>(FoundActors.Last());
+				if (Manager == NULL)
+				{
+					Manager = GetOwner()->GetWorld()->SpawnActor<AFootstepsManager>(FVector(0.f, 0.f, 0.f), FRotator(0.f, 0.f, 0.f));
+				}
+			}
+			else
 			{
 				Manager = GetOwner()->GetWorld()->SpawnActor<AFootstepsManager>(FVector(0.f, 0.f, 0.f), FRotator(0.f, 0.f, 0.f));
 			}
 		}
-		else
-		{
-			Manager = GetOwner()->GetWorld()->SpawnActor<AFootstepsManager>(FVector(0.f, 0.f, 0.f), FRotator(0.f, 0.f, 0.f));
-		}
 	}
-
-	if (Manager!=NULL)
+	if (Manager != NULL)
 	{
 		Manager->D_Everything.AddUFunction(this, TEXT("SetDisableEverything"));
 		Manager->D_SoundEffect.AddUFunction(this, TEXT("SetDisableSoundEffects"));
@@ -63,8 +92,6 @@ void UFootstepsComponent::BeginPlay()
 		Manager->UpdateAll();
 
 	}
-	// ...
-	
 }
 
 const bool UFootstepsComponent::CheckDataTableValidity(UDataTable* DataTableToCheck)
@@ -483,5 +510,19 @@ void UFootstepsComponent::SetFootprintFadeOutDuration(float FadeOutDuration)
 	if (!bIgnoreManager)
 	{
 		FootprintFadeOutDuration = FadeOutDuration;
+	}
+}
+
+void UFootstepsComponent::ChangeIgnoreManagerState(bool State, TSubclassOf<AFootstepsManager> ManagerType)
+{
+	if (!State)
+	{
+		bIgnoreManager = false;
+		ManagerClass = ManagerType;
+		SetupManager();
+	}
+	else
+	{
+		bIgnoreManager = true;
 	}
 }

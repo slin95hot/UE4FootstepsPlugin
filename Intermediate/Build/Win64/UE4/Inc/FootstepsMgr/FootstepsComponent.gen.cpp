@@ -24,9 +24,10 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsComponent() {}
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	FOOTSTEPSMGR_API UClass* Z_Construct_UClass_AFootstepsManager_NoRegister();
 	PHYSICSCORE_API UEnum* Z_Construct_UEnum_PhysicsCore_EPhysicalSurface();
 	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
-	FOOTSTEPSMGR_API UClass* Z_Construct_UClass_AFootstepsManager_NoRegister();
 // End Cross Module References
 
 static_assert(std::is_polymorphic<FFootStepsData>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FFootStepsData cannot be polymorphic unless super FTableRowBase is polymorphic");
@@ -106,6 +107,7 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FFootStepsData_Statics::NewProp_FootPrint_MetaData[] = {
 		{ "Category", "FootStepsData" },
+		{ "DisplayName", "Footprint" },
 		{ "ModuleRelativePath", "Public/FootstepsComponent.h" },
 	};
 #endif
@@ -113,6 +115,7 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FFootStepsData_Statics::NewProp_FadedDirtyFootPrint_MetaData[] = {
 		{ "Category", "FootStepsData" },
+		{ "DisplayName", "Faded Dirty Footprint" },
 		{ "ModuleRelativePath", "Public/FootstepsComponent.h" },
 	};
 #endif
@@ -151,7 +154,16 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FFootStepsData_Hash() { return 3004555239U; }
+	uint32 Get_Z_Construct_UScriptStruct_FFootStepsData_Hash() { return 4175797252U; }
+	DEFINE_FUNCTION(UFootstepsComponent::execChangeIgnoreManagerState)
+	{
+		P_GET_UBOOL(Z_Param_State);
+		P_GET_OBJECT(UClass,Z_Param_ManagerType);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ChangeIgnoreManagerState(Z_Param_State,Z_Param_ManagerType);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UFootstepsComponent::execSetFootprintFadeOutDuration)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_FadeOutDuration);
@@ -290,6 +302,7 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 		UClass* Class = UFootstepsComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AddFootstepEffect", &UFootstepsComponent::execAddFootstepEffect },
+			{ "ChangeIgnoreManagerState", &UFootstepsComponent::execChangeIgnoreManagerState },
 			{ "SetDirtyRowsNames", &UFootstepsComponent::execSetDirtyRowsNames },
 			{ "SetDirtyStepsCount", &UFootstepsComponent::execSetDirtyStepsCount },
 			{ "SetDisableDirtyFootprints", &UFootstepsComponent::execSetDisableDirtyFootprints },
@@ -365,6 +378,47 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UFootstepsComponent_AddFootstepEffect_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics
+	{
+		struct FootstepsComponent_eventChangeIgnoreManagerState_Parms
+		{
+			bool State;
+			TSubclassOf<AFootstepsManager>  ManagerType;
+		};
+		static void NewProp_State_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_State;
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ManagerType;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::NewProp_State_SetBit(void* Obj)
+	{
+		((FootstepsComponent_eventChangeIgnoreManagerState_Parms*)Obj)->State = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::NewProp_State = { "State", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FootstepsComponent_eventChangeIgnoreManagerState_Parms), &Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::NewProp_State_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::NewProp_ManagerType = { "ManagerType", nullptr, (EPropertyFlags)0x0014000000000080, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FootstepsComponent_eventChangeIgnoreManagerState_Parms, ManagerType), Z_Construct_UClass_AFootstepsManager_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::NewProp_State,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::NewProp_ManagerType,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/FootstepsComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UFootstepsComponent, nullptr, "ChangeIgnoreManagerState", nullptr, nullptr, sizeof(FootstepsComponent_eventChangeIgnoreManagerState_Parms), Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -921,6 +975,10 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DataTable;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ManagerClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ManagerClass;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Manager_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Manager;
@@ -1009,6 +1067,7 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UFootstepsComponent_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UFootstepsComponent_AddFootstepEffect, "AddFootstepEffect" }, // 2287815103
+		{ &Z_Construct_UFunction_UFootstepsComponent_ChangeIgnoreManagerState, "ChangeIgnoreManagerState" }, // 3876234916
 		{ &Z_Construct_UFunction_UFootstepsComponent_SetDirtyRowsNames, "SetDirtyRowsNames" }, // 2960927798
 		{ &Z_Construct_UFunction_UFootstepsComponent_SetDirtyStepsCount, "SetDirtyStepsCount" }, // 2492745390
 		{ &Z_Construct_UFunction_UFootstepsComponent_SetDisableDirtyFootprints, "SetDisableDirtyFootprints" }, // 1323844030
@@ -1064,9 +1123,18 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_DataTable = { "DataTable", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFootstepsComponent, DataTable), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_DataTable_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_DataTable_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_Manager_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_ManagerClass_MetaData[] = {
 		{ "Category", "Footsteps Component" },
 		{ "DisplayPriority", "2" },
+		{ "EditCondition", "!bIgnoreManager" },
+		{ "ModuleRelativePath", "Public/FootstepsComponent.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_ManagerClass = { "ManagerClass", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFootstepsComponent, ManagerClass), Z_Construct_UClass_AFootstepsManager_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_ManagerClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_ManagerClass_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_Manager_MetaData[] = {
+		{ "Category", "Footsteps Component" },
+		{ "DisplayPriority", "3" },
 		{ "EditCondition", "!bIgnoreManager" },
 		{ "ModuleRelativePath", "Public/FootstepsComponent.h" },
 	};
@@ -1075,7 +1143,7 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_bIgnoreManager_MetaData[] = {
 		{ "Category", "Footsteps Component" },
-		{ "DisplayPriority", "3" },
+		{ "DisplayPriority", "4" },
 		{ "ModuleRelativePath", "Public/FootstepsComponent.h" },
 	};
 #endif
@@ -1178,6 +1246,7 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne_MetaData[] = {
 		{ "Category", "Footsteps Component|Dirty Footprints" },
+		{ "DisplayName", "Overlay Dirty Footprints Over Normal Ones" },
 		{ "DisplayPriority", "1" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsComponent.h" },
@@ -1260,6 +1329,7 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_bDirtySteps,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_SurfaceType,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_DataTable,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_ManagerClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_Manager,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_bIgnoreManager,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFootstepsComponent_Statics::NewProp_bDisableEverything,
@@ -1306,7 +1376,7 @@ static struct FScriptStruct_FootstepsMgr_StaticRegisterNativesFFootStepsData
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UFootstepsComponent, 58486621);
+	IMPLEMENT_CLASS(UFootstepsComponent, 3269511574);
 	template<> FOOTSTEPSMGR_API UClass* StaticClass<UFootstepsComponent>()
 	{
 		return UFootstepsComponent::StaticClass();
