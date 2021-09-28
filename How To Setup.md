@@ -20,8 +20,7 @@ specified in the animation using a custom animnotify that's control the size of 
   ![](/img/04.png) 
 ##### 6.fill the Data Table with the Data you have. 
 >. you could leave some effect empty.
->
->."Faded Dirty Footprint" is not Requaird and used only with "Dirty Rows".
+>>.Only Dirty Surfaces uses the faded footprint coulmn.
 ##### 7.add a new Blueprint of type "FootStepsComponent".
  ![](/img/05.png)
 ##### 8.Set the Data Table to the Data Table you created.
@@ -57,7 +56,7 @@ specified in the animation using a custom animnotify that's control the size of 
 >>. if no manager class has been selected the "FootStepsComponent" well spawn a base class manager if none are present in the level.
 >
 >. Do Not Change Variables Value Directly!, use the functions in the "Footsteps Manager" Category.
->>. changing variables value directly will not update the actors using it.
+>>. changing variables value directly will not update the actors dependent on said manager.
 ##### Ignore Manager: if ignore Manager is checked the Component wont Use a Manager and its values can be changed independently.
 #### Footsteps State: its self explanatory.
 #### FadeOut:
@@ -66,6 +65,18 @@ specified in the animation using a custom animnotify that's control the size of 
 ##### Footprint FadeOut Duration: how long will footprint take to fadeout (in sec).
 
 #### Dirty Footprints:
+>. Dirty Footprints are the trail of footprints thats actors leave after steping on a dirty surface (blood,mud..etc).
 
+![](img/13.png)
+##### Overlay Dirty Footprints Over Normal Ones: whether to prints dirty footprints over normal one or switch to dirty footprints only.
+##### Dirty Steps Count: how many dirty steps to print before returning to print normals one.
+##### Dirty Rows Names: enter the names of the surfaces you want to mark as dirty here.
+
+#### Others:
+##### Spawn Particle at Bone Location: cheking this option will cuase the particles to spawn at bone or socket location instead of the floor underneath.
+>. useful for swimming for example.
+##### Override Row & Override With: When Override Row is checked you can enter a surface name in Override With to override whatever effect is playing with the effect of said surface no matter the surface underneath.
+>. you could override with water while swimming for example, or with blood if actor is injured while setting the Footprint Lifetime to a larger value if you want the player to track it.
+##### Ignore Missing Effect:
 
 ## [Back](/README.md)
