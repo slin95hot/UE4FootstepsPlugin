@@ -8,16 +8,25 @@ How To Setup:
 
 2.go to Project Setting->Physics and add the surface type you want to the list.
 
-![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/01.png)
+![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/01.png)
 
 3.create a Physical Material for each surface type you added, and assign the corresponding surface type to each one.
+
+ ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/02.png)
  
 4.create a Data Table and pick the "FootstepsData" RowStruct.
 
+ ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/03.png)
+ 
 5.create a new row for each surface type and name it the same as the corresponding surface type. (importnt and case sensitive)
 
+ ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/04.png)
+ 
 6.fill the Data Table with the Data you have. (you could leave some effect empty || "Faded Dirty Footprint" is not Requaird and used only with "Dirty Rows")
 
 7.add a new Blueprint of type "FootStepsComponent".
 
+ ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/05.png)
+
 8.Set the Data Table to the Data Table you created.
+
