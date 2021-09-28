@@ -39,3 +39,15 @@ How To Setup:
  10.in the class setting of the actor you added the FootStepsComponent to, add Footsteps Interface to the Interfaces section.
 
   ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/08.png)
+  
+ 11.right click on "Send Footstep Notification" and select Implement event.
+  
+  ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/09.png)
+  
+  12.search for and add the function "Add Footstep Effect" and connect the pins Like the Picture below.
+  
+  ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/10.png)
+  
+  13.open an animation sequence and add "Footstep_notify" at a frame you see the feet touch the ground.
+  
+   ![alt text](https://github.com/slin95hot/UE4FootstepsPlugin/blob/main/img/11.png)
