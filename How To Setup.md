@@ -42,7 +42,7 @@ specified in the animation using a custom animnotify that's control the size of 
 
 
 ## Footsteps Component Propertis:
->. same as [Manager](#####Manager) Propertis.
+>. same as [Manager](#manager-the-manager-can-be-used-to-control-all-the-footstepscomponent-associated-withyou-can-use-different-managers-for-different-groubs-of-actors) Propertis.
 
 ![](/img/12.png)
 
