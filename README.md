@@ -20,7 +20,7 @@
  ![](/img/03.png)
  
 ##### 5.create a new row for each surface type and name it the same as the corresponding surface type. 
->. important and case sensitive.
+> important and case sensitive.
 
   ![](/img/04.png) 
 ##### 6.fill the Data Table with the Data you have. 
@@ -47,13 +47,13 @@
 ## Footstep Notify:
 
 #### Footprint Size: set the footprint size.
->. if you set a negative scale on one of the foots you could flip the footprint so it's appear normal on each foot while using one texture.
+> if you set a negative scale on one of the foots you could flip the footprint so it's appear normal on each foot while using one texture.
 #### Particle Size: set the Particle size.
 #### Bone Name: set the name of the bone you want to trace from to the surface underneath.
->. the footprint will spawn on the trace hit location.
+> the footprint will spawn on the trace hit location.
 #### Trace Lenght: how far down do you want to scan for surface.
 #### Volume Multiplier: set the volume multiplier of the sound effect.
->. if crouching you may want to lower the sound effect volume.
+> if crouching you may want to lower the sound effect volume.
 
 ## Footsteps Component Propertis:
 >  same as [Manager](#manager-the-manager-can-be-used-to-control-all-the-footstepscomponent-associated-withyou-can-use-different-managers-for-different-groubs-of-actors) Propertis.
@@ -67,11 +67,11 @@
 ##### you can set the values you want in the manager and every "FootStepsComponent" associated with it in the level will take its values from it.
 > manager is not necessary for the setup but its allow for more control.
 >
->. the "FootStepsComponent" well spawn a manager of the specified class automatically if none are present in the level.
->>. if no manager class has been selected the "FootStepsComponent" well spawn a base class manager if none are present in the level.
+> the "FootStepsComponent" well spawn a manager of the specified class automatically if none are present in the level.
+>> if no manager class has been selected the "FootStepsComponent" well spawn a base class manager if none are present in the level.
 >
->. Do Not Change Variables Value Directly!, use the functions in the "Footsteps Manager" Category.
->>. changing variables value directly will not update the actors dependent on said manager.
+> Do Not Change Variables Value Directly!, use the functions in the "Footsteps Manager" Category.
+>> changing variables value directly will not update the actors dependent on said manager.
 ##### Ignore Manager: if ignore Manager is checked the Component wont Use a Manager and its values can be changed independently.
 #### Footsteps State: its self explanatory.
 #### FadeOut:
@@ -80,7 +80,7 @@
 ##### Footprint FadeOut Duration: how long will footprint take to fadeout (in sec).
 
 #### Dirty Footprints:
->. Dirty Footprints are the trail of footprints thats actors leave after steping on a dirty surface (blood,mud..etc).
+> Dirty Footprints are the trail of footprints thats actors leave after steping on a dirty surface (blood,mud..etc).
 >> Faded Dirty Footprints will spawn -if found- after "Dirty Steps Count" is less then half (if Dirty Steps Count set to 8 it will spawn 4 normal and 4 faded).
 
 ![](img/13.png)
@@ -90,9 +90,9 @@
 
 #### Others:
 ##### Spawn Particle at Bone Location: checking this option will cause the particles to spawn at bone or socket location instead of the floor underneath.
->. useful for swimming for example.
+> useful for swimming for example.
 ##### Override Row & Override With: When Override Row is checked you can enter a surface name in Override With to override whatever effect is playing with the effect of said surface no matter the surface underneath.
->. you could override with water while swimming for example, or with blood if actor is injured while setting the Footprint Lifetime to a larger value if you want the player to track it.
+> you could override with water while swimming for example, or with blood if actor is injured while setting the Footprint Lifetime to a larger value if you want the player to track it.
 ##### Ignore Missing Effect: if there a missing effects from current data table row checking this option will play effects from the first row of the data table instead.
 
 ## [top](#Footsteps-Plugin-for-UE4)
