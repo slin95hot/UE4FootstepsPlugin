@@ -5,6 +5,8 @@
 
 ## [See Footsteps Component Propertis](#footsteps-component-propertis)
 
+## [if you dont use skeletal mesh or you dont want to use animation driven system click here. ](#Add-Footsteps-Effect-Without-Animation-Or-skeletal-mesh)
+
 ## [FootstepNotify](#Footstep-Notify)
 
 ## How To Setup:
@@ -31,9 +33,7 @@
 ##### 8.Set the Data Table to the Data Table you created.
  ![](/img/06.png)
 ##### 9.add the new FootStepsComponent you created to the actor you want. 
-> must have a Skeletal Mesh.
->
-> ## [if you dont use skeletal mesh or you dont want to use animation driven system click here. ](#Add-Footsteps-Effect-Without-Animation-Or-skeletal-mesh)
+
 ![](/img/07.png)  
 ##### 10.in the class setting of the actor you added the FootStepsComponent to, add Footsteps Interface to the Interfaces section.
   ![](/img/08.png)  
