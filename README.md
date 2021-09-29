@@ -105,7 +105,7 @@
 
 ### example:
 
-> ![](img/15.png)
+> ![](img/15.jpg)
 
 
 ## [top](#Footsteps-Plugin-for-UE4)
