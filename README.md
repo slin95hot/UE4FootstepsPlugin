@@ -24,14 +24,14 @@
 
   ![](/img/04.png) 
 ##### 6.fill the Data Table with the Data you have. 
->. you could leave some effect empty.
->>.Only Dirty Surfaces uses the [faded dirty footprint](#dirty-footprints) coulmn.
+> you could leave some effect empty.
+>>Only Dirty Surfaces uses the [faded dirty footprint](#dirty-footprints) coulmn.
 ##### 7.add a new Blueprint of type "FootStepsComponent".
  ![](/img/05.png)
 ##### 8.Set the Data Table to the Data Table you created.
  ![](/img/06.png)
 ##### 9.add the new FootStepsComponent you created to the actor you want. 
->.must have a Skeletal Mesh.
+> must have a Skeletal Mesh.
 >
 ![](/img/07.png)  
 ##### 10.in the class setting of the actor you added the FootStepsComponent to, add Footsteps Interface to the Interfaces section.
@@ -56,7 +56,7 @@
 >. if crouching you may want to lower the sound effect volume.
 
 ## Footsteps Component Propertis:
->. same as [Manager](#manager-the-manager-can-be-used-to-control-all-the-footstepscomponent-associated-withyou-can-use-different-managers-for-different-groubs-of-actors) Propertis.
+>  same as [Manager](#manager-the-manager-can-be-used-to-control-all-the-footstepscomponent-associated-withyou-can-use-different-managers-for-different-groubs-of-actors) Propertis.
 
 ![](/img/12.png)
 
@@ -65,7 +65,7 @@
 ![](img/05.png)
 ##### Manager: the Manager can be used to control all the "FootStepsComponent" associated with,you can use different managers for different groubs of actors.
 ##### you can set the values you want in the manager and every "FootStepsComponent" associated with it in the level will take its values from it.
->. manager is not necessary for the setup but its allow for more control.
+> manager is not necessary for the setup but its allow for more control.
 >
 >. the "FootStepsComponent" well spawn a manager of the specified class automatically if none are present in the level.
 >>. if no manager class has been selected the "FootStepsComponent" well spawn a base class manager if none are present in the level.
