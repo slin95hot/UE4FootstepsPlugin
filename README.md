@@ -33,6 +33,7 @@
 ##### 9.add the new FootStepsComponent you created to the actor you want. 
 >.must have a Skeletal Mesh.
 >
+> ## [if you dont use skeletal mesh or you dont want to use animation driven system click here. ](#Add-Footsteps-Effect-Without-Animation-Or-skeletal-mesh)
 ![](/img/07.png)  
 ##### 10.in the class setting of the actor you added the FootStepsComponent to, add Footsteps Interface to the Interfaces section.
   ![](/img/08.png)  
@@ -94,5 +95,17 @@
 ##### Override Row & Override With: When Override Row is checked you can enter a surface name in Override With to override whatever effect is playing with the effect of said surface no matter the surface underneath.
 >. you could override with water while swimming for example, or with blood if actor is injured while setting the Footprint Lifetime to a larger value if you want the player to track it.
 ##### Ignore Missing Effect: if there a missing effects from current data table row checking this option will play effects from the first row of the data table instead.
+
+
+# Add Footsteps Effect Without Animation Or skeletal mesh
+
+### added a new function to use without relying on Animation.
+
+> ![](img/14.png)
+
+### example:
+
+> ![](img/15.png)
+
 
 ## [top](#Footsteps-Plugin-for-UE4)

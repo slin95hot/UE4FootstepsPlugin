@@ -83,6 +83,7 @@ void EmptyLinkFunctionForGeneratedCodeFootsepsInterface() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UFootsepsInterface_SendFootstepNotification_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Footsteps Manager" },
 		{ "ModuleRelativePath", "Public/FootsepsInterface.h" },
 	};
 #endif
@@ -115,10 +116,12 @@ void EmptyLinkFunctionForGeneratedCodeFootsepsInterface() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_FootstepsMgr,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UFootsepsInterface_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UFootsepsInterface_SendFootstepNotification, "SendFootstepNotification" }, // 837666786
+		{ &Z_Construct_UFunction_UFootsepsInterface_SendFootstepNotification, "SendFootstepNotification" }, // 1718219842
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFootsepsInterface_Statics::Class_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "Public/FootsepsInterface.h" },
 	};
 #endif
@@ -149,7 +152,7 @@ void EmptyLinkFunctionForGeneratedCodeFootsepsInterface() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UFootsepsInterface, 4097543751);
+	IMPLEMENT_CLASS(UFootsepsInterface, 179831558);
 	template<> FOOTSTEPSMGR_API UClass* StaticClass<UFootsepsInterface>()
 	{
 		return UFootsepsInterface::StaticClass();

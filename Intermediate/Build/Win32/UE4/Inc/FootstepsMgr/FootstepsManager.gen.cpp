@@ -843,13 +843,16 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::Class_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ClassGroupNames", "Footsteps" },
 		{ "IncludePath", "FootstepsManager.h" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything_MetaData[] = {
-		{ "Category", "Footsteps Component|Footsteps State" },
+		{ "Category", "Footsteps Manager|Footsteps State" },
 		{ "DisplayPriority", "1" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
 	};
@@ -858,10 +861,10 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bDisableEverything = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything = { "bDisableEverything", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything = { "bDisableEverything", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects_MetaData[] = {
-		{ "Category", "Footsteps Component|Footsteps State" },
+		{ "Category", "Footsteps Manager|Footsteps State" },
 		{ "DisplayPriority", "2" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
@@ -871,10 +874,10 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bDisableSoundEffects = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects = { "bDisableSoundEffects", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects = { "bDisableSoundEffects", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles_MetaData[] = {
-		{ "Category", "Footsteps Component|Footsteps State" },
+		{ "Category", "Footsteps Manager|Footsteps State" },
 		{ "DisplayPriority", "3" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
@@ -884,10 +887,10 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bDisableParticles = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles = { "bDisableParticles", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles = { "bDisableParticles", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableParticles_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints_MetaData[] = {
-		{ "Category", "Footsteps Component|Footsteps State" },
+		{ "Category", "Footsteps Manager|Footsteps State" },
 		{ "DisplayPriority", "4" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
@@ -897,10 +900,10 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bDisableFootprints = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints = { "bDisableFootprints", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints = { "bDisableFootprints", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableFootprints_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints_MetaData[] = {
-		{ "Category", "Footsteps Component|Footsteps State" },
+		{ "Category", "Footsteps Manager|Footsteps State" },
 		{ "DisplayPriority", "5" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
@@ -910,37 +913,38 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bDisableDirtyFootprints = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints = { "bDisableDirtyFootprints", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints = { "bDisableDirtyFootprints", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableDirtyFootprints_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintLifeTime_MetaData[] = {
-		{ "Category", "Footsteps Component|Fade Out" },
+		{ "Category", "Footsteps Manager|Fade Out" },
 		{ "DisplayPriority", "1" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintLifeTime = { "FootprintLifeTime", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, FootprintLifeTime), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintLifeTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintLifeTime_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintLifeTime = { "FootprintLifeTime", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, FootprintLifeTime), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintLifeTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintLifeTime_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDelay_MetaData[] = {
-		{ "Category", "Footsteps Component|Fade Out" },
+		{ "Category", "Footsteps Manager|Fade Out" },
 		{ "DisplayPriority", "2" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDelay = { "FootprintFadeOutDelay", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, FootprintFadeOutDelay), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDelay_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDelay_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDelay = { "FootprintFadeOutDelay", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, FootprintFadeOutDelay), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDelay_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDelay_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDuration_MetaData[] = {
-		{ "Category", "Footsteps Component|Fade Out" },
+		{ "Category", "Footsteps Manager|Fade Out" },
 		{ "DisplayPriority", "3" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDuration = { "FootprintFadeOutDuration", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, FootprintFadeOutDuration), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDuration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDuration_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDuration = { "FootprintFadeOutDuration", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, FootprintFadeOutDuration), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDuration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_FootprintFadeOutDuration_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne_MetaData[] = {
-		{ "Category", "Footsteps Component|Dirty Footprints" },
+		{ "Category", "Footsteps Manager|Dirty Footprints" },
+		{ "DisplayName", "Overlay Dirty Footprints Over Normal Ones" },
 		{ "DisplayPriority", "1" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
@@ -950,29 +954,29 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bOverlayDirtyFootprintsOverNormalOne = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne = { "bOverlayDirtyFootprintsOverNormalOne", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne = { "bOverlayDirtyFootprintsOverNormalOne", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverlayDirtyFootprintsOverNormalOne_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyStepsCount_MetaData[] = {
-		{ "Category", "Footsteps Component|Dirty Footprints" },
+		{ "Category", "Footsteps Manager|Dirty Footprints" },
 		{ "DisplayPriority", "2" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyStepsCount = { "DirtyStepsCount", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, DirtyStepsCount), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyStepsCount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyStepsCount_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyStepsCount = { "DirtyStepsCount", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, DirtyStepsCount), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyStepsCount_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyStepsCount_MetaData)) };
 	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyRowsNames_Inner = { "DirtyRowsNames", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyRowsNames_MetaData[] = {
-		{ "Category", "Footsteps Component|Dirty Footprints" },
+		{ "Category", "Footsteps Manager|Dirty Footprints" },
 		{ "DisplayPriority", "3" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyRowsNames = { "DirtyRowsNames", nullptr, (EPropertyFlags)0x0010000000010005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, DirtyRowsNames), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyRowsNames_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyRowsNames_MetaData)) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyRowsNames = { "DirtyRowsNames", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, DirtyRowsNames), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyRowsNames_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_DirtyRowsNames_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation_MetaData[] = {
-		{ "Category", "Footsteps Component|Others" },
+		{ "Category", "Footsteps Manager|Others" },
 		{ "DisplayPriority", "1" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
@@ -982,10 +986,10 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bSpawnParticleAtBoneLocation = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation = { "bSpawnParticleAtBoneLocation", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation = { "bSpawnParticleAtBoneLocation", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bSpawnParticleAtBoneLocation_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow_MetaData[] = {
-		{ "Category", "Footsteps Component|Others" },
+		{ "Category", "Footsteps Manager|Others" },
 		{ "DisplayPriority", "2" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
@@ -995,19 +999,19 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bOverrideRow = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow = { "bOverrideRow", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow = { "bOverrideRow", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bOverrideRow_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_OverrideWith_MetaData[] = {
-		{ "Category", "Footsteps Component|Others" },
+		{ "Category", "Footsteps Manager|Others" },
 		{ "DisplayPriority", "3" },
 		{ "EditCondition", "bOverrideRow" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_OverrideWith = { "OverrideWith", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, OverrideWith), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_OverrideWith_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_OverrideWith_MetaData)) };
+	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_OverrideWith = { "OverrideWith", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFootstepsManager, OverrideWith), METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_OverrideWith_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_OverrideWith_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect_MetaData[] = {
-		{ "Category", "Footsteps Component|Others" },
+		{ "Category", "Footsteps Manager|Others" },
 		{ "DisplayPriority", "4" },
 		{ "EditCondition", "!bDisableEverything" },
 		{ "ModuleRelativePath", "Public/FootstepsManager.h" },
@@ -1018,7 +1022,7 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 	{
 		((AFootstepsManager*)Obj)->bIgnoreMissingEffect = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect = { "bIgnoreMissingEffect", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect = { "bIgnoreMissingEffect", nullptr, (EPropertyFlags)0x0010000001000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AFootstepsManager), &Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect_SetBit, METADATA_PARAMS(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bIgnoreMissingEffect_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFootstepsManager_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableEverything,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFootstepsManager_Statics::NewProp_bDisableSoundEffects,
@@ -1064,7 +1068,7 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsManager() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFootstepsManager, 1984926473);
+	IMPLEMENT_CLASS(AFootstepsManager, 4293988591);
 	template<> FOOTSTEPSMGR_API UClass* StaticClass<AFootstepsManager>()
 	{
 		return AFootstepsManager::StaticClass();

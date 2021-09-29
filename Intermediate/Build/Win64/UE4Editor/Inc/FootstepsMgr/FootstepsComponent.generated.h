@@ -43,6 +43,7 @@ template<> FOOTSTEPSMGR_API UScriptStruct* StaticStruct<struct FFootStepsData>()
 	DECLARE_FUNCTION(execSetDisableParticles); \
 	DECLARE_FUNCTION(execSetDisableSoundEffects); \
 	DECLARE_FUNCTION(execSetDisableEverything); \
+	DECLARE_FUNCTION(execAddFootstepEffect2); \
 	DECLARE_FUNCTION(execAddFootstepEffect);
 
 
@@ -64,6 +65,7 @@ template<> FOOTSTEPSMGR_API UScriptStruct* StaticStruct<struct FFootStepsData>()
 	DECLARE_FUNCTION(execSetDisableParticles); \
 	DECLARE_FUNCTION(execSetDisableSoundEffects); \
 	DECLARE_FUNCTION(execSetDisableEverything); \
+	DECLARE_FUNCTION(execAddFootstepEffect2); \
 	DECLARE_FUNCTION(execAddFootstepEffect);
 
 

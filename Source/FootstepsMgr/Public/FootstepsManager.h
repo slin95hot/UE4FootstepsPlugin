@@ -23,7 +23,7 @@ DECLARE_MULTICAST_DELEGATE_OneParam(FLifeTime, float);
 DECLARE_MULTICAST_DELEGATE_OneParam(FFadeOutDelay, float);
 DECLARE_MULTICAST_DELEGATE_OneParam(FFadeOutDuration, float);
 
-UCLASS()
+UCLASS(Blueprintable, ClassGroup = "Footsteps")
 class FOOTSTEPSMGR_API AFootstepsManager : public AActor
 {
 	GENERATED_BODY()
@@ -86,39 +86,38 @@ public:
 	// Sets default values for this actor's properties
 	AFootstepsManager();
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Footsteps State", meta = (DisplayPriority = 1))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Footsteps State", meta = (DisplayPriority = 1))
 	bool bDisableEverything;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Footsteps State", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Footsteps State", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
 	bool bDisableSoundEffects;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Footsteps State", meta = (DisplayPriority = 3, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Footsteps State", meta = (DisplayPriority = 3, EditCondition = "!bDisableEverything"))
 	bool bDisableParticles;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Footsteps State", meta = (DisplayPriority = 4, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Footsteps State", meta = (DisplayPriority = 4, EditCondition = "!bDisableEverything"))
 	bool bDisableFootprints;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Footsteps State", meta = (DisplayPriority = 5, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Footsteps State", meta = (DisplayPriority = 5, EditCondition = "!bDisableEverything"))
 	bool bDisableDirtyFootprints;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Fade Out", meta = (DisplayPriority = 1, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Fade Out", meta = (DisplayPriority = 1, EditCondition = "!bDisableEverything"))
 	float FootprintLifeTime = 16.f;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Fade Out", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Fade Out", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
 	float FootprintFadeOutDelay = 11.f;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Fade Out", meta = (DisplayPriority = 3, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Fade Out", meta = (DisplayPriority = 3, EditCondition = "!bDisableEverything"))
 	float FootprintFadeOutDuration = 5.f;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Dirty Footprints", meta = (DisplayPriority = 1, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Dirty Footprints", meta = (DisplayName = "Overlay Dirty Footprints Over Normal Ones", DisplayPriority = 1, EditCondition = "!bDisableEverything"))
 	bool bOverlayDirtyFootprintsOverNormalOne = true;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Dirty Footprints", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Dirty Footprints", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
 	int32 DirtyStepsCount = 8;
-	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "Footsteps Component|Dirty Footprints", meta = (DisplayPriority = 3, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Dirty Footprints", meta = (DisplayPriority = 3, EditCondition = "!bDisableEverything"))
 	TArray<FName> DirtyRowsNames;
 
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Others", meta = (DisplayPriority = 1, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Others", meta = (DisplayPriority = 1, EditCondition = "!bDisableEverything"))
 	bool bSpawnParticleAtBoneLocation;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Others", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Others", meta = (DisplayPriority = 2, EditCondition = "!bDisableEverything"))
 	bool bOverrideRow;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Others", meta = (DisplayPriority = 3, EditCondition = "bOverrideRow"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Others", meta = (DisplayPriority = 3, EditCondition = "bOverrideRow"))
 	FName OverrideWith;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Footsteps Component|Others", meta = (DisplayPriority = 4, ShortTooltip = "do not use Default Effect if they're missing from current row.", EditCondition = "!bDisableEverything"))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, Category = "Footsteps Manager|Others", meta = (DisplayPriority = 4, ShortTooltip = "do not use Default Effect if they're missing from current row.", EditCondition = "!bDisableEverything"))
 	bool bIgnoreMissingEffect = true;
-
 };

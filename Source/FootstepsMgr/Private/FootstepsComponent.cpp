@@ -277,7 +277,7 @@ void UFootstepsComponent::AddFootstepEffect(FVector FootprintSize, FVector Parti
 									{
 										if (CurrentRow->FootPrint != NULL)
 										{
-											SpawnFootprintAtLocation(World, CurrentRow->FootPrint, Start, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+											SpawnFootprintAtLocation(World, CurrentRow->FootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
 										}
 										else
 										{
@@ -285,7 +285,7 @@ void UFootstepsComponent::AddFootstepEffect(FVector FootprintSize, FVector Parti
 											{
 												if (DefaultRow->FootPrint != NULL)
 												{
-													SpawnFootprintAtLocation(World, DefaultRow->FootPrint, Start, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+													SpawnFootprintAtLocation(World, DefaultRow->FootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
 												}
 											}
 										}
@@ -301,7 +301,7 @@ void UFootstepsComponent::AddFootstepEffect(FVector FootprintSize, FVector Parti
 
 											if (CurrentDirtyRow->FootPrint != NULL)
 											{
-												SpawnFootprintAtLocation(World, CurrentDirtyRow->FootPrint, Start, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+												SpawnFootprintAtLocation(World, CurrentDirtyRow->FootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
 											}
 											else
 											{
@@ -309,7 +309,7 @@ void UFootstepsComponent::AddFootstepEffect(FVector FootprintSize, FVector Parti
 												{
 													if (DefaultRow->FootPrint != NULL)
 													{
-														SpawnFootprintAtLocation(World, DefaultRow->FootPrint, Start, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+														SpawnFootprintAtLocation(World, DefaultRow->FootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
 													}
 												}
 											}
@@ -318,7 +318,7 @@ void UFootstepsComponent::AddFootstepEffect(FVector FootprintSize, FVector Parti
 										{
 											if (CurrentDirtyRow->FadedDirtyFootPrint != NULL)
 											{
-												SpawnFootprintAtLocation(World, CurrentDirtyRow->FadedDirtyFootPrint, Start, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+												SpawnFootprintAtLocation(World, CurrentDirtyRow->FadedDirtyFootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
 											}
 											else
 											{
@@ -326,7 +326,7 @@ void UFootstepsComponent::AddFootstepEffect(FVector FootprintSize, FVector Parti
 												{
 													if (DefaultRow->FadedDirtyFootPrint != NULL)
 													{
-														SpawnFootprintAtLocation(World, DefaultRow->FadedDirtyFootPrint, Start, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+														SpawnFootprintAtLocation(World, DefaultRow->FadedDirtyFootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
 													}
 												}
 											}
@@ -375,6 +375,194 @@ void UFootstepsComponent::AddFootstepEffect(FVector FootprintSize, FVector Parti
 
 									}
 								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+void UFootstepsComponent::AddFootstepEffect2(FVector TraceStartingLocation, float TraceLength, FVector FootprintSize, FVector ParticleSize, float VolumeMultiplier)
+{
+	UWorld* World = GetOwner()->GetWorld();
+
+	if (bDataTableIsValid)
+	{
+		//LineTrace Downward
+		FHitResult Hit;
+		FVector Start = TraceStartingLocation;
+		FVector End = FVector(Start.X, Start.Y, Start.Z - TraceLength);
+		FCollisionQueryParams CollQueryPar;
+		CollQueryPar.bReturnPhysicalMaterial = true;
+		World->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, CollQueryPar);
+
+		//Check Hit Result
+		if (Hit.IsValidBlockingHit())
+		{
+			if (Hit.PhysMaterial.Get() != NULL)
+			{
+				if (Hit.PhysMaterial.IsValid())
+				{
+					SurfaceType = Hit.PhysMaterial.Get()->SurfaceType;
+					const FName SurfaceName = FName(UEnum::GetDisplayValueAsText(SurfaceType).ToString());
+
+					if (CheckDataTableRowValidity(SurfaceName.ToString(), DataTable) && !bDisableEverything)
+					{
+						//getRow
+						if (bOverrideRow && CheckDataTableRowValidity(OverrideWith.ToString(), DataTable))
+						{
+							CurrentRow = DataTable->FindRow<FFootStepsData>(OverrideWith, "", true);
+						}
+						else
+						{
+							bOverrideRow = false;
+							CurrentRow = DataTable->FindRow<FFootStepsData>(SurfaceName, "", true);
+						}
+						//check if Dirty
+						if (IsADirtyRow(SurfaceName))
+						{
+							bDirtySteps = true;
+							CurrentDirtyRow = DataTable->FindRow<FFootStepsData>(SurfaceName, "", true);
+							DirtyStepsCountInt = DirtyStepsCount;
+						}
+						else
+						{
+							if (DirtyStepsCountInt == 0)
+							{
+								bDirtySteps = false;
+							}
+							else
+							{
+								DirtyStepsCountInt = DirtyStepsCountInt - 1;
+							}
+						}
+						//
+						//Play sound
+						if (!bDisableSoundEffects)
+						{
+							if (CurrentRow->SoundEffect != NULL)
+							{
+								UGameplayStatics::PlaySoundAtLocation(GetOwner(), CurrentRow->SoundEffect, Hit.Location, FRotator(0.f, 0.f, 0.f), VolumeMultiplier);
+							}
+							else
+							{
+								if (!bIgnoreMissingEffect)
+								{
+									if (DefaultRow->SoundEffect != NULL)
+									{
+										UGameplayStatics::PlaySoundAtLocation(GetOwner(), DefaultRow->SoundEffect, Hit.Location, FRotator(0.f, 0.f, 0.f), VolumeMultiplier);
+									}
+								}
+							}
+						}
+						//spawn Decal
+						FRotator ForwardRot = UKismetMathLibrary::MakeRotationFromAxes(GetOwner()->GetActorForwardVector() * -1.f, GetOwner()->GetActorRightVector() * -1, Hit.ImpactNormal);
+						FRotator FootprintRot = FRotator(-90.f, 0.f, GetOwner()->GetActorRotation().Yaw);
+
+						if (!bDisableFootprints)
+						{
+							if (bOverlayDirtyFootprintsOverNormalOne || !bDirtySteps)
+							{
+								if (CurrentRow->FootPrint != NULL)
+								{
+									SpawnFootprintAtLocation(World, CurrentRow->FootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+								}
+								else
+								{
+									if (!bIgnoreMissingEffect)
+									{
+										if (DefaultRow->FootPrint != NULL)
+										{
+											SpawnFootprintAtLocation(World, DefaultRow->FootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+										}
+									}
+								}
+							}
+						}
+
+						if (bDirtySteps)
+						{
+							if (CurrentDirtyRow && !bDisableDirtyFootprints)
+							{
+								if (DirtyStepsCountInt > DirtyStepsCount / 2)
+								{
+
+									if (CurrentDirtyRow->FootPrint != NULL)
+									{
+										SpawnFootprintAtLocation(World, CurrentDirtyRow->FootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+									}
+									else
+									{
+										if (!bIgnoreMissingEffect)
+										{
+											if (DefaultRow->FootPrint != NULL)
+											{
+												SpawnFootprintAtLocation(World, DefaultRow->FootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+											}
+										}
+									}
+								}
+								else
+								{
+									if (CurrentDirtyRow->FadedDirtyFootPrint != NULL)
+									{
+										SpawnFootprintAtLocation(World, CurrentDirtyRow->FadedDirtyFootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+									}
+									else
+									{
+										if (!bIgnoreMissingEffect)
+										{
+											if (DefaultRow->FadedDirtyFootPrint != NULL)
+											{
+												SpawnFootprintAtLocation(World, DefaultRow->FadedDirtyFootPrint, Hit.Location, FootprintRot, FootprintSize, FootprintLifeTime, FootprintFadeOutDelay, FootprintFadeOutDuration);
+											}
+										}
+									}
+
+								}
+							}
+						}
+						//spawn particle
+						if (!bDisableParticles)
+						{
+							if (!bSpawnParticleAtBoneLocation)
+							{
+								if (CurrentRow->ParticleSystem != NULL)
+								{
+									SpawnParticleAtLocation(World, CurrentRow->ParticleSystem, Hit.Location, ForwardRot, ParticleSize);
+								}
+								else
+								{
+									if (!bIgnoreMissingEffect)
+									{
+										if (DefaultRow->ParticleSystem != NULL)
+										{
+											SpawnParticleAtLocation(World, DefaultRow->ParticleSystem, Hit.Location, ForwardRot, ParticleSize);
+										}
+									}
+
+								}
+							}
+							else
+							{
+								if (CurrentRow->ParticleSystem != NULL)
+								{
+									SpawnParticleAtLocation(World, CurrentRow->ParticleSystem, Start, ForwardRot, ParticleSize);
+								}
+								else
+								{
+									if (!bIgnoreMissingEffect)
+									{
+										if (DefaultRow->ParticleSystem != NULL)
+										{
+											SpawnParticleAtLocation(World, DefaultRow->ParticleSystem, Start, ForwardRot, ParticleSize);
+										}
+									}
+
+								}
+
 							}
 						}
 					}

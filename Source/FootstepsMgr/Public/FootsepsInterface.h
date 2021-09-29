@@ -7,7 +7,7 @@
 #include "FootsepsInterface.generated.h"
 
 // This class does not need to be modified.
-UINTERFACE(MinimalAPI)
+UINTERFACE(Blueprintable, MinimalAPI)
 class UFootsepsInterface : public UInterface
 {
 	GENERATED_BODY()
@@ -22,6 +22,6 @@ class FOOTSTEPSMGR_API IFootsepsInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Footsteps Manager")
 	void SendFootstepNotification(FVector FootprintSize, FVector ParticleSize, USceneComponent* SkeletalMesh, FName BoneName, float TraceLength, float VolumeMultiplier);
 };

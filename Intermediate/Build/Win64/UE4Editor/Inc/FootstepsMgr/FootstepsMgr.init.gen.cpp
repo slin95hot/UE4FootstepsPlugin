@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeFootstepsMgr_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x0942C6DE,
+				0x068F032B,
 				0xD3DBF0B7,
 				METADATA_PARAMS(nullptr, 0)
 			};
