@@ -17,7 +17,7 @@
 		{
 			"Name": "FootstepsMgr",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "PreDefault"
 		}
 	],
 	"Plugins": [
